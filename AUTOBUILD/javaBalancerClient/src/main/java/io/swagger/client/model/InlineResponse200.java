@@ -25,7 +25,7 @@ import java.io.IOException;
  * time when server was added
  */
 @Schema(description = "time when server was added")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-09-03T18:50:55.364Z[GMT]")
+
 public class InlineResponse200 {
   @SerializedName("time")
   private String time = null;

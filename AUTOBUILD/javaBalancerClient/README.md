@@ -2,7 +2,6 @@
 
 Balancer
 - API version: 0.1.0
-  - Build date: 2021-09-03T18:50:55.364Z[GMT]
 
 Simple iperf load balancer
 
