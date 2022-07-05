@@ -10,8 +10,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Debug print
+        run: find .
+
       - name: Clear AUTOBUILD directory
         run: rm -rf AUTOBUILD
+
+      - name: Debug print
+        run: find .
 
       - name: Generate python client
         run: >
@@ -24,6 +30,9 @@ jobs:
           -o AUTOBUILD/pythonBalancerClient/
           -c config/pythonClientConfig.json
 
+      - name: Debug print
+        run: find .
+
       - name: Generate java client
         run: >
           java
@@ -35,7 +44,10 @@ jobs:
           -o AUTOBUILD/javaBalancerClient/
           -c config/javaClientConfig.json
 
-      - name: push
+      - name: Debug print
+        run: find .
+
+      - name: Push changes to the repository
         uses: actions-x/commit@v6
         with:
           message: 'Generate code using swagger-codegen'
