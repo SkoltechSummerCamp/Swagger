@@ -35,6 +35,9 @@ jobs:
           -o AUTOBUILD/javaBalancerClient/
           -c config/javaClientConfig.json
 
-      - uses: actions-js/push@master
+      - name: push
+        uses: github-actions-x/commit@v2.9
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'Generate code using swagger-codegen'
+          files: AUTOBUILD
