@@ -5,6 +5,7 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: swaggerapi/swagger-codegen-cli:2.4.27
 
     steps:
       - uses: actions/checkout@v2
@@ -13,24 +14,22 @@ jobs:
         run: rm -rf AUTOBUILD
 
       - name: Generate python client
-        uses: bjerkio/swagger-codegen-action@v1
-        with:
-          args: >
-            generate
-            -i yaml/swagger.yaml
-            -l python
-            -o AUTOBUILD/pythonBalancerClient/
-            -c config/pythonClientConfig.json
+        run:  >
+          swagger-codegen-cli
+          generate
+          -i yaml/swagger.yaml
+          -l python
+          -o AUTOBUILD/pythonBalancerClient/
+          -c config/pythonClientConfig.json
 
       - name: Generate java client
-        uses: bjerkio/swagger-codegen-action@v1
-        with:
-          args: >
-            generate
-            -i yaml/swagger.yaml
-            -l java
-            -o AUTOBUILD/javaBalancerClient/
-            -c config/javaClientConfig.json
+        run:  >
+          swagger-codegen-cli
+          generate
+          -i yaml/swagger.yaml
+          -l java
+          -o AUTOBUILD/javaBalancerClient/
+          -c config/javaClientConfig.json
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
