@@ -44,7 +44,12 @@ paths:
     delete:
       operationId: service_delete
       description: Unregister caller as service
-      parameters: []
+      parameters:
+        - name: data
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/ServerAddressRequest'
       responses:
         '204':
           description: Service unregistered
