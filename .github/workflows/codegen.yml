@@ -13,9 +13,9 @@ jobs:
         run: rm -rf AUTOBUILD
 
       - name: Generate python client
-        uses: mpetrunic/swagger-cli-action@v1.0.0
+        uses: bjerkio/swagger-codegen-action@v1
         with:
-          command: >
+          args: >
             generate
             -i yaml/swagger.yaml
             -l python
@@ -23,9 +23,9 @@ jobs:
             -c config/pythonClientConfig.json
 
       - name: Generate java client
-        uses: mpetrunic/swagger-cli-action@v1.0.0
+        uses: bjerkio/swagger-codegen-action@v1
         with:
-          command: >
+          args: >
             generate
             -i yaml/swagger.yaml
             -l java
