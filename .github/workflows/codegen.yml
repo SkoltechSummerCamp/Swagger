@@ -38,8 +38,6 @@ jobs:
           -c config/javaClientConfig.json
 
       - name: push
-        uses: github-actions-x/commit@v2.9
+        uses: actions-x/commit@v6
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: 'Generate code using swagger-codegen'
-          files: AUTOBUILD
+          message: 'Generate code using swagger-codegen'
