@@ -1,13 +1,9 @@
-# ServerAddressResponse
+# InlineResponse200
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ip** | **str** |  | 
-**port** | **int** |  | 
-**port_iperf** | **int** |  | 
-**time** | **datetime** |  | 
+**time** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

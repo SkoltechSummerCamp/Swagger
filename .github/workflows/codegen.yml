@@ -37,6 +37,8 @@ jobs:
           -o AUTOBUILD/javaBalancerClient/
           -c config/javaClientConfig.json
 
+      # Swagger codegen container has invalid git installed,
+      # so we need another container to push changes
       - name: Upload generated code to artifacts
         uses: actions/upload-artifact@v2
         with:
@@ -53,17 +55,11 @@ jobs:
       - name: Clear AUTOBUILD directory
         run: rm -rf AUTOBUILD
 
-      - name: Debug print
-        run: find .
-
       - name: Download generated code
         uses: actions/download-artifact@v2
         with:
           name: AUTOBUILD
           path: AUTOBUILD
-
-      - name: Debug print
-        run: find .
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
