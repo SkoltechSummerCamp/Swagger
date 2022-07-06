@@ -1,6 +1,8 @@
 name: Code generation using swagger
 
-on: push
+on:
+  push:
+    branches: [ main ]
 
 jobs:
   generate:
