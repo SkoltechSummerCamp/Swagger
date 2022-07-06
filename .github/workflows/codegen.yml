@@ -8,6 +8,9 @@ jobs:
     container: swaggerapi/swagger-codegen-cli:2.4.27
 
     steps:
+      - name: Install git)
+        run: apt install git
+
       - uses: actions/checkout@v3
 
       - name: Debug print
