@@ -51,10 +51,16 @@ jobs:
       - name: Clear AUTOBUILD directory
         run: rm -rf AUTOBUILD
 
+      - name: Debug print
+        run: find .
+
       - name: Download generated code
         uses: actions/download-artifact@v2
         with:
           name: AUTOBUILD
+
+      - name: Debug print
+        run: find .
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
